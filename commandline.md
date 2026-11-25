@@ -4,8 +4,9 @@ pwntools には、内部の機能の一部を包んだ、便利なコマンド�
 
 これらのツールが入っていないように見える場合は、環境変数 `$PATH` に `~/.local/bin` を追加したかを、確かめてください。
 
-各コマンドの一覧と使い方は、原文のページにあります（コードから自動で作られるページのため、訳していません）。
+各コマンドの一覧と使い方は、API リファレンスのページにあります。
 
+- [コマンドラインツールの一覧](https://0xff-minusone.github.io/pwntools-api-ja/commandline.html)
 - [コマンドラインツールの一覧（原文）](https://docs.pwntools.com/en/dev/commandline.html)
 
 手元では、`pwn --help` で、同じ一覧が表示されます。

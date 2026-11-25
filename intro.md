@@ -22,9 +22,9 @@ Pwntools のチュートリアルが、オンラインにあります。
 ## 接続する
 
 チャレンジのバイナリを pwn するには、そのバイナリと話す必要がありますよね。
-pwntools の [`pwnlib.tubes`](https://docs.pwntools.com/en/dev/tubes.html) モジュールを使えば、これがとても簡単です。
+pwntools の [`pwnlib.tubes`](https://0xff-minusone.github.io/pwntools-api-ja/tubes.html) モジュールを使えば、これがとても簡単です。
 
-このモジュールは、プロセス、ソケット、シリアルポートなど、あらゆるものと話すための標準のインターフェースと、よくある作業のための便利な補助機能を提供します。たとえば、[`pwnlib.tubes.remote`](https://docs.pwntools.com/en/dev/tubes/sockets.html) を使ったリモート接続です。
+このモジュールは、プロセス、ソケット、シリアルポートなど、あらゆるものと話すための標準のインターフェースと、よくある作業のための便利な補助機能を提供します。たとえば、[`pwnlib.tubes.remote`](https://0xff-minusone.github.io/pwntools-api-ja/tubes/sockets.html) を使ったリモート接続です。
 
 ```python
 >>> conn = remote('ftp.ubuntu.com',21)
@@ -49,7 +49,7 @@ b'Please specify the password.\r\n'
 b'hello'
 ```
 
-プロセスとのやり取りも、[`pwnlib.tubes.process`](https://docs.pwntools.com/en/dev/tubes/processes.html) のおかげで簡単です。
+プロセスとのやり取りも、[`pwnlib.tubes.process`](https://0xff-minusone.github.io/pwntools-api-ja/tubes/processes.html) のおかげで簡単です。
 
 ```python
 >>> sh = process('/bin/sh')
@@ -69,7 +69,7 @@ $ whoami
 user
 ```
 
-ローカルや setuid のエクスプロイトを実行するために、ボックスへ SSH で入る必要があるとき用の、SSH モジュールもあります（[`pwnlib.tubes.ssh`](https://docs.pwntools.com/en/dev/tubes/ssh.html)）。プロセスをすばやく起動して出力を取ったり、プロセスを起動して、`process` の tube のように、それと対話したりできます。
+ローカルや setuid のエクスプロイトを実行するために、ボックスへ SSH で入る必要があるとき用の、SSH モジュールもあります（[`pwnlib.tubes.ssh`](https://0xff-minusone.github.io/pwntools-api-ja/tubes/ssh.html)）。プロセスをすばやく起動して出力を取ったり、プロセスを起動して、`process` の tube のように、それと対話したりできます。
 
 ```python
 >>> shell = ssh('bandit0', 'bandit.labs.overthewire.org', password='bandit0', port=2220)
@@ -90,7 +90,7 @@ b'hello world\n'
 エクスプロイトを書くときによくある作業は、Python が扱う整数と、バイト列としての表現とを、相互に変換することです。
 たいていは、組み込みの `struct` モジュールを使います。
 
-pwntools は、[`pwnlib.util.packing`](https://docs.pwntools.com/en/dev/util/packing.html) で、これを簡単にします。アンパックのコードを覚える必要も、補助ルーチンでコードを散らかす必要も、もうありません。
+pwntools は、[`pwnlib.util.packing`](https://0xff-minusone.github.io/pwntools-api-ja/util/packing.html) で、これを簡単にします。アンパックのコードを覚える必要も、補助ルーチンでコードを散らかす必要も、もうありません。
 
 ```python
 >>> import struct
@@ -152,7 +152,7 @@ b'\xe3 \xf0\x00'
 
 ## アセンブルと逆アセンブル
 
-出どころの分からない、アセンブル済みのシェルコードのかたまりを、もう実行する必要はありません。[`pwnlib.asm`](https://docs.pwntools.com/en/dev/asm.html) モジュールは、すごい機能でいっぱいです。
+出どころの分からない、アセンブル済みのシェルコードのかたまりを、もう実行する必要はありません。[`pwnlib.asm`](https://0xff-minusone.github.io/pwntools-api-ja/asm.html) モジュールは、すごい機能でいっぱいです。
 
 ```python
 >>> enhex(asm('mov eax, 0'))
@@ -169,7 +169,7 @@ b'\xe3 \xf0\x00'
    5:   eb f9                   jmp    0x0
 ```
 
-しかも、たいていの場合、自分でシェルコードを書く必要すらありません。pwntools には、時間を節約できるシェルコードがたくさん入った [`pwnlib.shellcraft`](https://docs.pwntools.com/en/dev/shellcraft.html) モジュールが付いています。
+しかも、たいていの場合、自分でシェルコードを書く必要すらありません。pwntools には、時間を節約できるシェルコードがたくさん入った [`pwnlib.shellcraft`](https://0xff-minusone.github.io/pwntools-api-ja/shellcraft.html) モジュールが付いています。
 
 たとえば、`setreuid(getuid(), getuid())` を行い、続いてファイルディスクリプタ 4 を `stdin`、`stdout`、`stderr` に `dup`（複製）して、シェルを起動したい、としましょう。
 
@@ -180,9 +180,9 @@ b'\xe3 \xf0\x00'
 
 ## そのほかの道具
 
-[`pwnlib.util.fiddling`](https://docs.pwntools.com/en/dev/util/fiddling.html) のおかげで、hexdump を、もう自分で書く必要はありません。
+[`pwnlib.util.fiddling`](https://0xff-minusone.github.io/pwntools-api-ja/util/fiddling.html) のおかげで、hexdump を、もう自分で書く必要はありません。
 
-[`pwnlib.cyclic`](https://docs.pwntools.com/en/dev/util/cyclic.html) のおかげで、バッファの中の、クラッシュを引き起こすオフセットを、見つけられます。
+[`pwnlib.cyclic`](https://0xff-minusone.github.io/pwntools-api-ja/util/cyclic.html) のおかげで、バッファの中の、クラッシュを引き起こすオフセットを、見つけられます。
 
 ```python
 >>> cyclic(20)
@@ -194,7 +194,7 @@ b'aaaabaaacaaadaaaeaaa'
 
 ## ELF の操作
 
-値を決め打ちするのは、もうやめましょう。[`pwnlib.elf`](https://docs.pwntools.com/en/dev/elf.html) で、実行時に調べます。
+値を決め打ちするのは、もうやめましょう。[`pwnlib.elf`](https://0xff-minusone.github.io/pwntools-api-ja/elf.html) で、実行時に調べます。
 
 ```python
 >>> e = ELF('/bin/cat')
