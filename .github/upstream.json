@@ -1,0 +1,18 @@
+{
+  "upstreams": [
+    {
+      "repo": "Gallopsled/pwntools",
+      "branch": "dev",
+      "paths": [
+        "docs/source/index.rst",
+        "docs/source/about.rst",
+        "docs/source/install.rst",
+        "docs/source/install",
+        "docs/source/intro.rst",
+        "docs/source/globals.rst",
+        "docs/source/commandline.rst"
+      ],
+      "base": "ed3f217658e555a1f0f85a01d0ab420b07ea0dc8"
+    }
+  ]
+}

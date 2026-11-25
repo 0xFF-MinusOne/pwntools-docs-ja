@@ -1,0 +1,70 @@
+site_name: Pwntools 公式ドキュメント(日本語訳)
+site_description: Gallopsled/pwntools の公式ドキュメント(dev)の日本語訳
+site_url: https://0xff-minusone.github.io/pwntools-docs-ja/
+repo_url: https://github.com/0xFF-MinusOne/pwntools-docs-ja
+docs_dir: .site-src
+copyright: >-
+  日本語訳。原著:
+  <a href="https://github.com/Gallopsled/pwntools">Gallopsled/pwntools</a>
+  (<a href="https://docs.pwntools.com/en/dev/">docs.pwntools.com</a>)
+  / ライセンス: <a href="https://github.com/0xFF-MinusOne/pwntools-docs-ja/blob/main/LICENSE">MIT</a>
+  <br>Unofficial Japanese translation of <a href="https://github.com/Gallopsled/pwntools">Gallopsled/pwntools</a>. Not reviewed or endorsed by the original authors; the original text prevails.
+
+theme:
+  name: material
+  language: ja
+  font: false
+  logo: assets/minusone-mark.svg
+  favicon: assets/minusone-avatar-light.svg
+  features:
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+
+extra_css:
+  - assets/ja-docs.css
+  - assets/mkdocs.css
+  - assets/minusone.css
+extra_javascript:
+  - assets/ja-docs.js
+
+plugins:
+  - search:
+      lang: ja
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Gallopsled/pwntools
+      name: 原著(Gallopsled/pwntools)
+
+nav:
+  - はじめに: README.md
+  - pwntools について: about.md
+  - インストール:
+      - install.md
+      - Binutils: install/binutils.md
+      - Python の開発用ヘッダー: install/headers.md
+  - はじめの一歩: intro.md
+  - from pwn import *: globals.md
+  - コマンドラインツール: commandline.md
+  - 原文(API リファレンス): https://docs.pwntools.com/en/dev/
