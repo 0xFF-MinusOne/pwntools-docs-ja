@@ -69,4 +69,5 @@ nav:
   - はじめの一歩: intro.md
   - from pwn import *: globals.md
   - コマンドラインツール: commandline.md
+  - API リファレンス(日本語訳): https://0xff-minusone.github.io/pwntools-api-ja/
   - 原文(API リファレンス): https://docs.pwntools.com/en/dev/
