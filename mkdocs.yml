@@ -32,6 +32,8 @@ extra_css:
   - assets/minusone.css
 extra_javascript:
   - assets/ja-docs.js
+  - assets/glossary-pwntools.js
+  - assets/glossary.js
 
 plugins:
   - search:
